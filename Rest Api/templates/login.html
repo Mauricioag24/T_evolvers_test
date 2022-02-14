@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>T-Evolvers Test</title>
+  </head>
+<body>
+   <form action = "http://localhost:5000/login" method="post">
+      <h1>Login</h1>
+      {% if msg %}
+         <p class=error><strong>Message:</strong> {{ msg }}
+         {% endif %}
+         {% if error %}
+         <p class=error><strong>Error:</strong> {{ error }}
+         {% endif %}
+            <p style= color:black>Ingrese el Usuario:
+            <b style=color:red>*</b><input type = "text" name = "usr" required></p>
+            <p style =color:black>Ingrese la contraseña:
+            <b style=color:red>*</b>
+            <input type = "password" name = "pssd" required/></p>
+            <p><div id="button">
+               <input type = "submit" class="f" name = "button" value = "Ingresar"/>
+               <input type = "reset" class="f" name = "button" value = "Borrar"/>
+            <div class="clr"></div></p>
+         </div>
+         <ul>
+            <li><a href="https://www.google.com.co/">Salir</a></li>
+         </ul>
+      </form>   
+</body>
+</html>

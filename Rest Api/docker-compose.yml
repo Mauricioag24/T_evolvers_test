@@ -1,0 +1,45 @@
+version: '3'
+services: 
+    nodo1:
+        image: elasticsearch:7.13.1
+        container_name: nodo1
+        environment: 
+            - node.name=nodo1
+            - cluster.name=docker_cluster
+            # - cluster.initial_master_nodes=nodo1
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - discovery.type=single-node
+
+        ulimits: 
+            memlock:
+                soft: -1
+                hard: -1
+        volumes: 
+            - es-data01:/usr/share/elasticsearch/data
+        ports: 
+            - 9200:9200
+        networks: 
+            - elastic
+
+
+    kibana:
+        image: kibana:7.13.1
+        container_name: kibana
+        environment:
+            SEVER_NAME: localhost
+            ELASTICSEARCH_HOSTS: http://nodo1:9200
+
+        ports: 
+            - 5601:5601
+        networks: 
+            - elastic
+
+volumes: 
+    es-data01:
+        driver: local
+
+
+networks: 
+    elastic:
+        driver: bridge

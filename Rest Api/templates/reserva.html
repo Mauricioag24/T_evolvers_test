@@ -1,0 +1,20 @@
+<body>
+    <form action = "http://localhost:5000/reserva" method="post">
+       <h1>Login</h1>
+       {% if error %}
+         <p class=error><strong>Error:</strong> {{ error }}
+         {% endif %}
+             <p style= color:black>Ingrese el Usuario:
+             <b style=color:red>*</b><input type = "text" name = "usr" required></p>
+             <p style =color:black>Ingrese el token:
+             <b style=color:red>*</b>
+             <input type = "text" name = "tkn" required/></p>
+             <p><div id="button">
+                <input type = "submit" class="f" name = "button" value = "Ingresar"/>
+                <input type = "submit" class="f" name = "button" value = "Regresar"/>
+                <input type = "reset" class="f" name = "button" value = "Borrar"/>
+             <div class="clr"></div></p>
+          </div>
+       </form>   
+ </body>
+ </html>

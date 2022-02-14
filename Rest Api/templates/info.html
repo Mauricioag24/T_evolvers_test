@@ -1,0 +1,31 @@
+<html>
+   <body>
+      <form action = "http://localhost:5000/info" method = "post">
+         <h1>BOOKING INFORMATION</h1>
+         <p>Nombre:
+            <input type = "text" name = name value= {{data[0]}} disabled="disable"/></p>
+         <p>apellido:
+            <input type = "text" name = last value= {{data[1]}} disabled="disable"></p>
+         <p>token:
+            <input type = "int" name = age value= {{data[2]}} disabled="disable"/></p> 
+         <p>checkin:
+            <input type = "int" name = cc value= {{data[3]}} disabled="disable"/></p>
+         <p>checkout:
+            <input type = "int" name = cc value= {{data[4]}} disabled="disable"/></p>
+         <p>Precio Total:
+            <input type = "int" name = cc value= {{data[5]}} disabled="disable"/></p>
+         <p>Necesidad Adicionales:
+            <input type = "int" name = cc value= {{data[6]}} disabled="disable"/></p>
+         <p>Pago:
+            <input type = "int" name = cc value= {{data[7]}} disabled="disable"/></p>
+         <b></b>
+         <p><div id="buttons">
+            <input type = "submit" class="f" name = "button" value = "Pagar"/>
+            <input type = "submit" class="f" name = "button" value = "Regresar"/>
+            <input type = "submit" class="f" name = "button" value = "Cerrar Sesion"/></p>
+            <input type = "submit" class="f" name = "button" value = "Editar Reserva"/></p>
+            <div class="clr"></div></p>
+         </div>
+      </form>   
+   </body>
+</html>
